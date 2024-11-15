@@ -12,36 +12,36 @@ Inside of the data directory there is a file called "transaction_data_daily_even
 
 Use grep to find all instances where the upload was initiated. 
 ```
-PROVIDE A SOLUTION HERE
+data % grep "upload_started" transaction_data_daily_event_log_20190129.dat
 ```
 
 Once you've reviewed these results, repeat the process but this time using the -c flag to determine how many matching occurences were found.
 ```
-PROVIDE A SOLUTION HERE
+data % grep -c "upload_started" transaction_data_daily_event_log_20190129.dat
 ```
 
 
 Use grep to find all instances where the upload was successful. 
 ```
-PROVIDE A SOLUTION HERE
+data % grep "complete" transaction_data_daily_event_log_20190129.dat
 ```
 
 Once you've reviewed these results, determine how many matching occurrences were found. This time instead of using the -c flag, pipe the result to the wc program.
 ```
-PROVIDE A SOLUTION HERE
+data % grep "complete" transaction_data_daily_event_log_20190129.dat | wc -l
 ```
 
 
 Use grep to find all instances where the upload failed. Ensure your output displays the line numbers for each match.
 
 ```
-PROVIDE A SOLUTION HERE
+data % grep -n "failure" transaction_data_daily_event_log_20190129.dat  
 ```
 
 Upon review, we would like to only view failures with error code SYSOFFLINE or WEAKSIGNAL.
 
 ```
-PROVIDE A SOLUTION HERE
+data % grep -E "failure.*(SYSOFFLINE|WEAKSIGNAL)" transaction_data_daily_event_log_20190129.dat
 ```
 
 
